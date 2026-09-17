@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shahid Karim — Associate Professor | Computer Vision & Deep Learning</title>
-<meta name="description" content="Shahid Karim — Associate Professor, Researcher in Computer Vision, Deep Learning, Image Fusion, and Multidimensional Imaging Systems." />
+<title>Shahid Karim — Associate Professor &amp; Principal Investigator | Computer Vision &amp; Deep Learning</title>
+<meta name="description" content="Shahid Karim — Associate Professor and Principal Investigator in Computer Vision, Deep Learning, Image Fusion, and Multidimensional Imaging Systems." />
 <style>
   /* ============ RESET & BASE ============ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,6 +13,8 @@
     --navy-light: #1b3a5c;
     --accent: #2f7fbf;
     --accent-light: #e8f2fb;
+    --gold: #c9a227;
+    --gold-light: #fdf6e3;
     --text: #1f2933;
     --text-light: #52606d;
     --border: #e1e7ed;
@@ -81,10 +83,10 @@
     font-size: 1.1rem;
     letter-spacing: -0.2px;
   }
-  .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .nav-links a {
     color: var(--text-light);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
   }
@@ -114,6 +116,19 @@
     color: #b8d4ec;
     margin-bottom: 18px;
     font-weight: 500;
+  }
+  .pi-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    vertical-align: middle;
   }
   .hero .tagline {
     color: #d6e6f4;
@@ -208,7 +223,7 @@
   .interest-card h4 { color: var(--navy); font-size: 1.02rem; margin-bottom: 8px; }
   .interest-card p { color: var(--text-light); font-size: 0.88rem; }
 
-  /* ============ TIMELINE (Education & Experience) ============ */
+  /* ============ TIMELINE ============ */
   .timeline { position: relative; padding-left: 28px; }
   .timeline::before {
     content: "";
@@ -265,7 +280,6 @@
     color: #fff;
     border-color: var(--accent);
   }
-  .pub-list { counter-reset: pub; }
   .pub-item {
     background: #fff;
     border: 1px solid var(--border);
@@ -295,6 +309,24 @@
   .pub-more { text-align: center; margin-top: 20px; }
 
   /* ============ PROJECTS ============ */
+  .project-subhead {
+    font-size: 1.1rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .project-subhead::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .project-subhead.gold::before { background: var(--gold); }
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -306,9 +338,28 @@
     border-radius: var(--radius);
     padding: 24px;
     box-shadow: var(--shadow);
+    position: relative;
   }
-  .project-card h4 { color: var(--navy); font-size: 1.02rem; margin-bottom: 8px; }
+  .project-card.pi { border-top: 3px solid var(--gold); }
+  .project-card h4 { color: var(--navy); font-size: 1.02rem; margin-bottom: 6px; }
+  .project-role {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .project-role.pi { background: var(--gold); color: #fff; }
+  .project-role.co { background: var(--accent-light); color: var(--accent); }
   .project-card p { color: var(--text-light); font-size: 0.88rem; margin-bottom: 12px; }
+  .project-card .meta {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
   .project-card .tag {
     display: inline-block;
     font-size: 0.74rem;
@@ -318,7 +369,22 @@
     border-radius: 12px;
     font-weight: 600;
     margin-right: 4px;
+    margin-bottom: 4px;
   }
+
+  /* ============ GRANTS ============ */
+  .grant-list li {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  .grant-list .grant-title { color: var(--navy); font-weight: 600; display: block; margin-bottom: 4px; }
+  .grant-list .grant-meta { font-size: 0.82rem; color: var(--accent); font-weight: 600; }
 
   /* ============ AWARDS / PATENTS ============ */
   .award-list li {
@@ -428,6 +494,7 @@
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
+      <a href="#grants">Grants</a>
       <a href="#experience">Experience</a>
       <a href="#awards">Awards</a>
       <a href="#teaching">Teaching</a>
@@ -440,10 +507,11 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
+      <span class="pi-badge">Principal Investigator</span>
       <h1>Shahid Karim</h1>
       <p class="role">Associate Professor · Principal Investigator · Computer Vision &amp; Deep Learning</p>
       <p class="tagline">
-        Computer Vision &amp; Deep Learning · Image Fusion &amp; Feature Recognition ·
+        Leading funded research in Computer Vision &amp; Deep Learning · Image Fusion &amp; Feature Recognition ·
         Multidimensional Imaging Systems · Robotics &amp; Artificial Intelligence
       </p>
       <div class="hero-contact">
@@ -471,10 +539,14 @@
         <p>
           I am an <strong>Associate Professor</strong> at Xi'an Eurasia University and a former
           <strong>Postdoctoral Research Fellow</strong> at the Research &amp; Development Institute of
-          Northwestern Polytechnical University in Shenzhen, China. My research spans interrelated
-          sub-areas of <strong>machine learning and computer vision</strong>, with a unifying theme of
-          constructing efficient and robust techniques using self-organized autonomous entities in
-          robotics and artificial intelligence.
+          Northwestern Polytechnical University in Shenzhen, China. As a <strong>Principal Investigator (PI)</strong>,
+          I lead funded research projects in computer vision, multidimensional imaging, and artificial
+          intelligence, and have contributed to multiple <strong>National Natural Science Foundation of China (NSFC)</strong> projects.
+        </p>
+        <p>
+          My research spans interrelated sub-areas of <strong>machine learning and computer vision</strong>,
+          with a unifying theme of constructing efficient and robust techniques using self-organized
+          autonomous entities in robotics and artificial intelligence.
         </p>
         <p>
           I received my <strong>PhD in Information and Communication Engineering</strong> from the
@@ -486,15 +558,14 @@
           My near-term research focuses on <strong>deep learning and computer vision</strong>,
           <strong>image fusion and feature recognition</strong>, <strong>multidimensional imaging systems</strong>,
           and <strong>robotics and artificial intelligence</strong>. I have authored/co-authored
-          numerous SCI/EI-indexed journal and conference papers, contributed to National Natural Science
-          Foundation of China projects, and hold licensed patents in electro-optical sensing and
-          target classification.
+          numerous SCI/EI-indexed journal and conference papers and hold licensed patents in
+          electro-optical sensing and target classification.
         </p>
       </div>
       <aside class="info-card">
         <h3>Quick Info</h3>
         <ul class="info-list">
-          <li><span class="label">Role</span> Associate Professor</li>
+          <li><span class="label">Role</span> Associate Professor &amp; PI</li>
           <li><span class="label">Affiliation</span> Xi'an Eurasia University</li>
           <li><span class="label">PhD</span> Harbin Institute of Technology</li>
           <li><span class="label">Focus</span> Computer Vision &amp; AI</li>
@@ -547,19 +618,18 @@
 
     <div class="pub-list" id="pubList">
 
-      <!-- ===== JOURNAL PAPERS ===== -->
-      <div class="pub-item" data-type="journal">
-        <span class="pub-title">Automatic Machine Learning based Real Time Multi-Tasking Image Fusion.</span>
+      <div class="pub-item" data-type="conference">
+        Karim, S., Tong, G., Li, J., et al. <span class="pub-title">Automatic Machine Learning based Real Time Multi-Tasking Image Fusion.</span>
         <span class="pub-venue">Proceedings of the 2024 16th International Conference on Machine Learning and Computing</span>, 2024. <span class="pub-tag">Conference</span>
       </div>
 
       <div class="pub-item" data-type="conference">
-        <span class="pub-title">Dense Network-Based Spectral-Polarization Image Fusion: Multispectral Data Enhancement via Encoder-Decoder Approach.</span>
+        Karim, S., Tong, G., Li, J., et al. <span class="pub-title">Dense Network-Based Spectral-Polarization Image Fusion: Multispectral Data Enhancement via Encoder-Decoder Approach.</span>
         <span class="pub-venue">Proceedings of the 6th International Conference on Information Technologies and Electrical Engineering</span>, 2023. <span class="pub-tag">Conference</span>
       </div>
 
       <div class="pub-item" data-type="journal">
-        Karim, S.*, Rehman, A.U., Hussain, R., et al. <span class="pub-title">Mobile crowdsensing with energy efficiency to control road congestion in internet cloud of vehicles: a review.</span>
+        Fatima, Z., Rehman, A.U., Hussain, R., Karim, S.*, et al. <span class="pub-title">Mobile crowdsensing with energy efficiency to control road congestion in internet cloud of vehicles: a review.</span>
         <span class="pub-venue">Multimedia Tools and Applications</span>, 2023. <span class="pub-tag">SCI IF=3.6</span>
       </div>
 
@@ -638,7 +708,6 @@
         <span class="pub-venue">Wireless Communications and Mobile Computing</span>, 2017. <span class="pub-tag">SCI IF=1.87</span>
       </div>
 
-      <!-- ===== CONFERENCE PAPERS ===== -->
       <div class="pub-item" data-type="conference">
         Karim, S., Zhang, Y., Yin, S., Asif, M.R. <span class="pub-title">An Efficient Region Proposal Method for Optical Remote Sensing Imagery.</span>
         <span class="pub-venue">IGARSS-2018 IEEE International Geoscience and Remote Sensing Symposium</span>, 2018: 2455–2458. <span class="pub-tag">EI Conference</span>
@@ -671,14 +740,324 @@
 <section id="projects">
   <div class="container">
     <h2 class="section-title">Research Projects</h2>
-    <p class="section-subtitle">Selected academic and funded research projects.</p>
+    <p class="section-subtitle">Projects led as Principal Investigator and contributions as Co-Investigator.</p>
+
+    <!-- ===== AS PRINCIPAL INVESTIGATOR ===== -->
+    <h3 class="project-subhead gold">As Principal Investigator (PI)</h3>
     <div class="project-grid">
+
+      <div class="project-card pi">
+        <span class="project-role pi">Principal Investigator</span>
+        <h4>Multidimensional Imaging Systems for Target Detection</h4>
+        <p class="meta">R&amp;D Institute, Northwestern Polytechnical University, Shenzhen · 2021–2024</p>
+        <p>Led design, organization, and execution of advanced experiments for multidimensional imaging systems; developed novel protocols and published results in SCI-indexed journals.</p>
+        <span class="tag">Imaging Systems</span><span class="tag">Target Detection</span>
+      </div>
+
+      <div class="project-card pi">
+        <span class="project-role pi">Principal Investigator</span>
+        <h4>Spectral–Polarization Image Fusion via Dense Networks</h4>
+        <p class="meta">2023 · Encoder-Decoder Approach</p>
+        <p>Directed research on multispectral data enhancement using dense encoder-decoder networks for spectral-polarization image fusion.</p>
+        <span class="tag">Image Fusion</span><span class="tag">Deep Learning</span>
+      </div>
+
+      <div class="project-card pi">
+        <span class="project-role pi">Principal Investigator</span>
+        <h4>Automatic ML-based Real-Time Multi-Tasking Image Fusion</h4>
+        <p class="meta">2024 · ICMLC 2024</p>
+        <p>Led development of an automatic machine-learning framework for real-time multi-tasking image fusion.</p>
+        <span class="tag">AutoML</span><span class="tag">Real-Time Systems</span>
+      </div>
+
+      <div class="project-card pi">
+        <span class="project-role pi">Project Lead / Co-Inventor</span>
+        <h4>Compact Multipurpose Electro-Optical / Gas Sensing Testing Kit</h4>
+        <p class="meta">2023 · Licensed Patent (Application No. 2023208946660)</p>
+        <p>Designed and led development of a compact multipurpose testing kit for electro-optical or gas sensing characterizations; patent licensed through the State Intellectual Property Office.</p>
+        <span class="tag">Sensing</span><span class="tag">Patent</span>
+      </div>
+
+    </div>
+
+    <!-- ===== AS CO-INVESTIGATOR / CONTRIBUTOR ===== -->
+    <h3 class="project-subhead">As Co-Investigator / Contributor</h3>
+    <div class="project-grid">
+
       <div class="project-card">
-        <h4>Object Detection in Optical Remote Sensing Imagery</h4>
+        <span class="project-role co">Contributor</span>
+        <h4>National Natural Science Foundation of China (NSFC) Projects</h4>
+        <p class="meta">2017 – present</p>
+        <p>Research contributions to multiple NSFC-funded projects in imaging, remote sensing, and intelligent systems.</p>
+        <span class="tag">NSFC</span><span class="tag">Funded Research</span>
+      </div>
+
+      <div class="project-card">
+        <span class="project-role co">PhD Research</span>
+        <h4>Object Detection Based on Local Features for Optical Remote Sensing Imagery</h4>
+        <p class="meta">Harbin Institute of Technology · 2015–2019</p>
         <p>PhD thesis research on local feature-based object detection for optical remote sensing imagery.</p>
         <span class="tag">Computer Vision</span><span class="tag">Remote Sensing</span>
       </div>
+
       <div class="project-card">
-        <h4>Multidimensional Imaging Systems</h4>
-        <p>Design and experimentation of multidimensional imaging systems using established scientific protocols.</p>
-        <
+        <span class="project-role co">MS Research</span>
+        <h4>BiScO₃–PbTiO₃-based High-Temperature Piezoelectric Ceramics</h4>
+        <p class="meta">Xi'an Jiaotong University · 2012–2015</p>
+        <p>MS thesis research on preparation, structure, and dielectric/piezoelectric properties of Bi₂O₃–PbTiO₃-based high-temperature piezoelectric ceramics.</p>
+        <span class="tag">Materials</span><span class="tag">Piezoelectrics</span>
+      </div>
+
+      <div class="project-card">
+        <span class="project-role co">BS Thesis</span>
+        <h4>Remotely Controlled Extension for Home Appliances</h4>
+        <p class="meta">COMSATS University · 2010</p>
+        <p>Bachelor's thesis on remote-control extensions for home appliances, plus microcontroller interfacing projects.</p>
+        <span class="tag">Embedded Systems</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GRANTS & FUNDING ==================== -->
+<section id="grants">
+  <div class="container">
+    <h2 class="section-title">Grants &amp; Funding</h2>
+    <p class="section-subtitle">Research funding and project leadership.</p>
+    <ul class="grant-list">
+      <li>
+        <span class="grant-title">Principal Investigator — Multidimensional Imaging Systems for Target Detection</span>
+        <span class="grant-meta">R&amp;D Institute, NWPU Shenzhen · 2021–2024</span>
+      </li>
+      <li>
+        <span class="grant-title">Principal Investigator — Spectral–Polarization Image Fusion via Dense Networks</span>
+        <span class="grant-meta">2023 · Encoder-Decoder Approach</span>
+      </li>
+      <li>
+        <span class="grant-title">Principal Investigator — Automatic ML-based Real-Time Multi-Tasking Image Fusion</span>
+        <span class="grant-meta">2024 · ICMLC 2024</span>
+      </li>
+      <li>
+        <span class="grant-title">Contributor — National Natural Science Foundation of China (NSFC) Projects</span>
+        <span class="grant-meta">2017 – present</span>
+      </li>
+      <li>
+        <span class="grant-title">Project Lead — Compact Multipurpose Electro-Optical / Gas Sensing Testing Kit</span>
+        <span class="grant-meta">2023 · Licensed Patent (App. No. 2023208946660)</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== EXPERIENCE & EDUCATION ==================== -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience &amp; Education</h2>
+    <p class="section-subtitle">Academic appointments and degrees.</p>
+    <div class="two-col">
+      <div>
+        <h3 class="project-subhead">Work Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Associate Professor</h4>
+            <div class="meta">Xi'an Eurasia University · 03/2024 – Present</div>
+            <p>Teaching Digital Image Processing; supervising undergraduate final-year projects; contributing to provincial research projects as PI; authoring research papers and participating in strategic planning.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Postdoctoral Research Fellow</h4>
+            <div class="meta">R&amp;D Institute, NWPU Shenzhen · 12/2021 – 03/2024</div>
+            <p>Designed, organized, and conducted advanced experiments for multidimensional imaging systems; developed new protocols; published results in research journals; developed hypotheses, experimental plans, and roadmaps.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Assistant Professor (SE)</h4>
+            <div class="meta">ILMA University · 09/2019 – 03/2024</div>
+            <p>Taught undergraduate and graduate courses in DIP, ICT, WDD, HCI, computer vision, AI, and computer graphics; supervised students and graded assessments.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Operation Site Engineer &amp; Hotline Operator</h4>
+            <div class="meta">Egyptian Pakistani Telecommunication Services Company · 03/2010 – 08/2012</div>
+            <p>Monitored BTS/BSC alarms; mobilized teams to sites; tested loop break activities; performed initialization, locking/unlocking sectors, and BTS troubleshooting.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Electronics Instructor</h4>
+            <div class="meta">Rawal Technical Training Institute (RTTI) · 01/2009 – 12/2009</div>
+            <p>Delivered lectures on basic electronics and computer applications.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="project-subhead">Education</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>PhD — Information and Communication Engineering</h4>
+            <div class="meta">Harbin Institute of Technology · 09/2015 – 07/2019</div>
+            <p>Thesis: Research on object detection based on local features for optical remote sensing imagery.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>MS — Electronics Science and Technology</h4>
+            <div class="meta">Xi'an Jiaotong University · 09/2012 – 07/2015</div>
+            <p>Thesis: Research analysis on preparation, structure and dielectric/piezoelectric properties of Bi₂O₃–PbTiO₃-based high-temperature piezoelectric ceramics.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>BEE — Electronics Engineering</h4>
+            <div class="meta">COMSATS University · 01/2006 – 03/2010</div>
+            <p>PEC No. Electro/12320. BS thesis: Remotely control extension for home appliances.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AWARDS & PATENTS ==================== -->
+<section id="awards">
+  <div class="container">
+    <h2 class="section-title">Awards, Honors &amp; Patents</h2>
+    <p class="section-subtitle">Recognitions, funded contributions, and intellectual property.</p>
+    <ul class="award-list">
+      <li>
+        <span class="year">2023</span>
+        <span>Co-authored patent licensed: <strong>"A compact multipurpose testing kit for electro-optical or gas sensing characterizations"</strong> — State Intellectual Property Office, Application No. 2023208946660.</span>
+      </li>
+      <li>
+        <span class="year">2023</span>
+        <span>Patent: <strong>一种目标分类方法</strong> (Target Classification Method) — China, Patent No. 202311626649.X. Inventors: Li Jinyang, Yu Yiting, Quan Yu, Shahid Karim.</span>
+      </li>
+      <li>
+        <span class="year">2023</span>
+        <span>Patent: <strong>一种基于模板的快速距离变换方法</strong> (Template-based Fast Distance Transform Method) — China, Patent No. 202311627000.X. Inventors: Li Jinyang, Yu Yiting, Quan Yu, Shahid Karim.</span>
+      </li>
+      <li>
+        <span class="year">2021</span>
+        <span>Recognized as <strong>HEC-approved PhD supervisor</strong> in Engineering and Technology.</span>
+      </li>
+      <li>
+        <span class="year">2019–present</span>
+        <span>Reviewed several papers in key SCI journals (Web of Science Researcher ID: AAO-1087-2020).</span>
+      </li>
+      <li>
+        <span class="year">2017–present</span>
+        <span>Research contributions to multiple <strong>National Natural Science Foundation of China (NSFC)</strong> projects.</span>
+      </li>
+      <li>
+        <span class="year">Memberships</span>
+        <span>Senior Member, International Society for Applied Computing (ISAC), Membership# SM2022111701 · Member, International Association of Engineers (IAENG), Membership# 325437 · IEEE Student Member (2018–2019).</span>
+      </li>
+      <li>
+        <span class="year">Editorial</span>
+        <span>Editorial Board Member, <em>Satellite Oceanography and Meteorology</em> · Associate Editor, <em>International Journal of Imaging and Sensing Technologies and Applications (JIISTA)</em>.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== TEACHING & STUDENTS ==================== -->
+<section id="teaching">
+  <div class="container">
+    <h2 class="section-title">Teaching &amp; Students</h2>
+    <p class="section-subtitle">Courses taught and student supervision.</p>
+    <div class="two-col">
+      <div>
+        <h3 class="project-subhead">Courses Taught</h3>
+        <ul class="list-block">
+          <li><strong>Digital Image Processing</strong> — Xi'an Eurasia University</li>
+          <li><strong>Computer Vision</strong> — ILMA University</li>
+          <li><strong>Artificial Intelligence</strong> — ILMA University</li>
+          <li><strong>Computer Graphics</strong> — ILMA University</li>
+          <li><strong>Human-Computer Interaction (HCI)</strong> — ILMA University</li>
+          <li><strong>Information &amp; Communication Technology (ICT)</strong> — ILMA University</li>
+          <li><strong>Web Design &amp; Development (WDD)</strong> — ILMA University</li>
+          <li><strong>Basic Electronics &amp; Computer Applications</strong> — RTTI</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="project-subhead">Students &amp; Collaborators</h3>
+        <ul class="list-block">
+          <li>As <strong>Principal Investigator</strong>, supervise undergraduate and graduate students on final-year projects and research initiatives in computer vision and deep learning.</li>
+          <li>Supervise undergraduate final-year projects at Xi'an Eurasia University.</li>
+          <li>Collaborate with researchers at the R&amp;D Institute of NWPU Shenzhen on multidimensional imaging.</li>
+          <li>HEC-approved PhD supervisor in Engineering and Technology.</li>
+        </ul>
+
+        <h3 class="project-subhead" style="margin-top:28px;">Recommendations</h3>
+        <ul class="list-block">
+          <li><strong>Prof. Ye Zhang</strong> — Director, Institute of Image and Information Technology, Harbin Institute of Technology, China. <a href="mailto:zhye@hit.edu.cn">zhye@hit.edu.cn</a></li>
+          <li><strong>Prof. Yiting Yu</strong> — R&amp;D Institute, Northwestern Polytechnical University, Shenzhen, China. <a href="mailto:yyt@nwpu.edu.cn">yyt@nwpu.edu.cn</a></li>
+          <li><strong>Prof. Hang Li</strong> — Dean, College of Software Engineering, Shenyang Normal University, China. <a href="mailto:lihang@synu.edu.cn">lihang@synu.edu.cn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Get in touch for research collaborations, student supervision, or speaking invitations.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h4>Email</h4>
+        <p><a href="mailto:shahid@nwpu.edu.cn">shahid@nwpu.edu.cn</a></p>
+        <p><a href="mailto:shahidhit@yahoo.com">shahidhit@yahoo.com</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h4>Phone</h4>
+        <p>+86-13602656420</p>
+        <p>+92-3338260606</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h4>Address</h4>
+        <p>Research &amp; Development Institute of Northwestern Polytechnical University in Shenzhen, Shenzhen 518057, China</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🔗</div>
+        <h4>Profiles</h4>
+        <p><a href="https://scholar.google.com/citations?user=WcKWid4QAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+        <p><a href="https://orcid.org/0000-0001-9986-5052" target="_blank" rel="noopener">ORCID</a></p>
+        <p><a href="https://www.researchgate.net/profile/Shahid-Karim-2" target="_blank" rel="noopener">ResearchGate</a></p>
+        <p><a href="https://www.scopus.com/authid/detail.uri?authorId=572000061" target="_blank" rel="noopener">Scopus</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Shahid Karim · Associate Professor &amp; Principal Investigator</p>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=WcKWid4QAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://orcid.org/0000-0001-9986-5052" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://www.researchgate.net/profile/Shahid-Karim-2" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=572000061" target="_blank" rel="noopener">Scopus</a>
+      <a href="mailto:shahid@nwpu.edu.cn">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Publication filter
+  const filters = document.querySelectorAll('.pub-filter');
+  const items = document.querySelectorAll('.pub-item');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const type = btn.dataset.filter;
+      items.forEach(item => {
+        item.style.display = (type === 'all' || item.dataset.type === type) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
