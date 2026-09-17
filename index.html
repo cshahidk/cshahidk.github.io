@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shahid Karim — Associate Professor | Computer Vision & Deep Learning</title>
+<meta name="description" content="Shahid Karim — Associate Professor, Researcher in Computer Vision, Deep Learning, Image Fusion, and Multidimensional Imaging Systems." />
+<style>
+  /* ============ RESET & BASE ============ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0f2740;
+    --navy-light: #1b3a5c;
+    --accent: #2f7fbf;
+    --accent-light: #e8f2fb;
+    --text: #1f2933;
+    --text-light: #52606d;
+    --border: #e1e7ed;
+    --bg: #ffffff;
+    --bg-alt: #f7fafc;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(15, 39, 64, 0.08);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; display: block; }
+  ul { list-style: none; }
+
+  /* ============ LAYOUT ============ */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; }
+  section:nth-child(even) { background: var(--bg-alt); }
+  .section-title {
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .section-subtitle {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 12px;
+    border-radius: 2px;
+  }
+
+  /* ============ NAVBAR ============ */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+  .nav-brand {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 1.1rem;
+    letter-spacing: -0.2px;
+  }
+  .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+  .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--navy); }
+
+  /* ============ HERO ============ */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    padding: 80px 0 72px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .hero .role {
+    font-size: 1.15rem;
+    color: #b8d4ec;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .hero .tagline {
+    color: #d6e6f4;
+    max-width: 620px;
+    margin-bottom: 26px;
+  }
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 0.9rem;
+    color: #cfe0ef;
+    margin-bottom: 28px;
+  }
+  .hero-contact span { display: inline-flex; align-items: center; gap: 6px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 11px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #256aa3; text-decoration: none; }
+  .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+
+  .avatar {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 3px solid rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; }
+  .about-text p { margin-bottom: 16px; color: var(--text-light); }
+  .about-text strong { color: var(--text); }
+  .info-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .info-card h3 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .info-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9rem;
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--border);
+    color: var(--text-light);
+  }
+  .info-list li:last-child { border-bottom: none; }
+  .info-list .label { color: var(--navy); font-weight: 600; min-width: 78px; }
+
+  /* ============ RESEARCH INTERESTS ============ */
+  .interest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .interest-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 3px solid var(--accent);
+  }
+  .interest-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(15,39,64,0.12); }
+  .interest-card h4 { color: var(--navy); font-size: 1.02rem; margin-bottom: 8px; }
+  .interest-card p { color: var(--text-light); font-size: 0.88rem; }
+
+  /* ============ TIMELINE (Education & Experience) ============ */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item { position: relative; padding-bottom: 30px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .timeline-item h4 { color: var(--navy); font-size: 1.05rem; margin-bottom: 3px; }
+  .timeline-item .meta {
+    font-size: 0.86rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .timeline-item p { color: var(--text-light); font-size: 0.92rem; }
+
+  /* ============ PUBLICATIONS ============ */
+  .pub-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .pub-filter {
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .pub-filter.active, .pub-filter:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .pub-list { counter-reset: pub; }
+  .pub-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    transition: box-shadow 0.2s;
+  }
+  .pub-item:hover { box-shadow: var(--shadow); }
+  .pub-item .pub-title { color: var(--navy); font-weight: 600; }
+  .pub-item .pub-venue { font-style: italic; }
+  .pub-item .pub-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 2px 9px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+  .pub-more { text-align: center; margin-top: 20px; }
+
+  /* ============ PROJECTS ============ */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+  }
+  .project-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .project-card h4 { color: var(--navy); font-size: 1.02rem; margin-bottom: 8px; }
+  .project-card p { color: var(--text-light); font-size: 0.88rem; margin-bottom: 12px; }
+  .project-card .tag {
+    display: inline-block;
+    font-size: 0.74rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  /* ============ AWARDS / PATENTS ============ */
+  .award-list li {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .award-list .year {
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 58px;
+    font-size: 0.86rem;
+  }
+
+  /* ============ TEACHING / STUDENTS ============ */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .list-block li {
+    padding: 10px 0 10px 22px;
+    position: relative;
+    color: var(--text-light);
+    font-size: 0.92rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .list-block li:last-child { border-bottom: none; }
+  .list-block li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .list-block strong { color: var(--navy); }
+
+  /* ============ CONTACT ============ */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .contact-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .contact-card .icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .contact-card h4 { color: var(--navy); font-size: 0.92rem; margin-bottom: 6px; }
+  .contact-card p, .contact-card a { font-size: 0.86rem; color: var(--text-light); word-break: break-word; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--navy);
+    color: #b8cfe3;
+    padding: 36px 0;
+    text-align: center;
+    font-size: 0.86rem;
+  }
+  footer a { color: #b8d4ec; }
+  footer .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero .tagline { margin-left: auto; margin-right: auto; }
+    .hero-contact, .hero-actions { justify-content: center; }
+    .avatar { margin: 0 auto; }
+    .about-grid, .two-col { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 14px;
+    }
+    .nav-toggle { display: block; }
+    .hero h1 { font-size: 1.9rem; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<header>
+  <div class="container nav">
+    <div class="nav-brand">Shahid Karim</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Shahid Karim</h1>
+      <p class="role">Associate Professor · Researcher · Principal Investigator</p>
+      <p class="tagline">
+        Computer Vision &amp; Deep Learning · Image Fusion &amp; Feature Recognition ·
+        Multidimensional Imaging Systems · Robotics &amp; Artificial Intelligence
+      </p>
+      <div class="hero-contact">
+        <span>📍 Xi'an, China</span>
+        <span>✉️ <a href="mailto:shahid@nwpu.edu.cn" style="color:#b8d4ec;">shahid@nwpu.edu.cn</a></span>
+        <span>📞 +86-13602656420</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="https://scholar.google.com/citations?user=WcKWid4QAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">Google Scholar</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+    <div class="avatar">SK</div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">Researcher, educator, and principal investigator in computer vision and AI.</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am an <strong>Associate Professor</strong> at Xi'an Eurasia University and a former
+          <strong>Postdoctoral Research Fellow</strong> at the Research &amp; Development Institute of
+          Northwestern Polytechnical University in Shenzhen, China. My research spans interrelated
+          sub-areas of <strong>machine learning and computer vision</strong>, with a unifying theme of
+          constructing efficient and robust techniques using self-organized autonomous entities in
+          robotics and artificial intelligence.
+        </p>
+        <p>
+          I received my <strong>PhD in Information and Communication Engineering</strong> from the
+          Harbin Institute of Technology (2019), an <strong>MS in Electronics Science and Technology</strong>
+          from Xi'an Jiaotong University (2015), and a <strong>BEE in Electronics Engineering</strong>
+          from COMSATS University (2010).
+        </p>
+        <p>
+          My near-term research focuses on <strong>deep learning and computer vision</strong>,
+          <strong>image fusion and feature recognition</strong>, <strong>multidimensional imaging systems</strong>,
+          and <strong>robotics and artificial intelligence</strong>. I have authored/co-authored
+          numerous SCI/EI-indexed journal and conference papers, contributed to National Natural Science
+          Foundation of China projects, and hold licensed patents in electro-optical sensing and
+          target classification.
+        </p>
+      </div>
+      <aside class="info-card">
+        <h3>Quick Info</h3>
+        <ul class="info-list">
+          <li><span class="label">Role</span> Associate Professor</li>
+          <li><span class="label">Affiliation</span> Xi'an Eurasia University</li>
+          <li><span class="label">PhD</span> Harbin Institute of Technology</li>
+          <li><span class="label">Focus</span> Computer Vision &amp; AI</li>
+          <li><span class="label">ORCID</span> <a href="https://orcid.org/0000-0001-9986-5052" target="_blank" rel="noopener">0000-0001-9986-5052</a></li>
+          <li><span class="label">Scopus</span> <a href="https://www.scopus.com/authid/detail.uri?authorId=572000061" target="_blank" rel="noopener">572000061</a></li>
+          <li><span class="label">HEC</span> Approved PhD Supervisor</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== RESEARCH INTERESTS ==================== -->
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Research Interests</h2>
+    <p class="section-subtitle">Interrelated sub-areas of machine learning, computer vision, and intelligent systems.</p>
+    <div class="interest-grid">
+      <div class="interest-card">
+        <h4>Deep Learning &amp; Computer Vision</h4>
+        <p>Efficient and robust vision models for detection, recognition, and segmentation across domains.</p>
+      </div>
+      <div class="interest-card">
+        <h4>Image Fusion &amp; Feature Recognition</h4>
+        <p>Multi-modal and multi-spectral image fusion, feature extraction, and matching for remote sensing and imaging.</p>
+      </div>
+      <div class="interest-card">
+        <h4>Multidimensional Imaging Systems</h4>
+        <p>Snapshot multispectral-panchromatic imaging, customized filter arrays, and spectral-polarization fusion.</p>
+      </div>
+      <div class="interest-card">
+        <h4>Robotics &amp; Artificial Intelligence</h4>
+        <p>Self-organized autonomous entities, peer-to-peer organization of work, and intelligent autonomous tracking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PUBLICATIONS ==================== -->
+<section id="publications">
+  <div class="container">
+    <h2 class="section-title">Selected Publications</h2>
+    <p class="section-subtitle">Peer-reviewed journal and conference papers (SCI/EI/ESCI indexed).</p>
+
+    <div class="pub-controls">
+      <button class="pub-filter active" data-filter="all">All</button>
+      <button class="pub-filter" data-filter="journal">Journal</button>
+      <button class="pub-filter" data-filter="conference">Conference</button>
+    </div>
+
+    <div class="pub-list" id="pubList">
+
+      <!-- ===== JOURNAL PAPERS ===== -->
+      <div class="pub-item" data-type="journal">
+        <span class="pub-title">Automatic Machine Learning based Real Time Multi-Tasking Image Fusion.</span>
+        <span class="pub-venue">Proceedings of the 2024 16th International Conference on Machine Learning and Computing</span>, 2024. <span class="pub-tag">Conference</span>
+      </div>
+
+      <div class="pub-item" data-type="conference">
+        <span class="pub-title">Dense Network-Based Spectral-Polarization Image Fusion: Multispectral Data Enhancement via Encoder-Decoder Approach.</span>
+        <span class="pub-venue">Proceedings of the 6th International Conference on Information Technologies and Electrical Engineering</span>, 2023. <span class="pub-tag">Conference</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Karim, S.*, Rehman, A.U., Hussain, R., et al. <span class="pub-title">Mobile crowdsensing with energy efficiency to control road congestion in internet cloud of vehicles: a review.</span>
+        <span class="pub-venue">Multimedia Tools and Applications</span>, 2023. <span class="pub-tag">SCI IF=3.6</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Chughtai, M.S., Bibi, I., Karim, S.*, et al. <span class="pub-title">Deep learning trends and future perspectives of web security and vulnerabilities.</span>
+        <span class="pub-venue">Journal of High Speed Networks</span>, 2023. <span class="pub-tag">SCI IF=0.9</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Wang, Y., Tong, G., Li, B., Guo, X., Song, X., Zhao, Y., Karim, S., et al. <span class="pub-title">Miniaturized customized filtering-wheel-based multispectral imaging system for target detection.</span>
+        <span class="pub-venue">Measurement</span>, 2023: 113506. <span class="pub-tag">SCI IF=5.6</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Khan, A.A., Laghari, A.A., Li, P., Dootio, M.A., Karim, S. <span class="pub-title">The collaborative role of blockchain, artificial intelligence, and industrial internet of things in digitalization of small and medium-size enterprises.</span>
+        <span class="pub-venue">Scientific Reports</span>, 13(1), 2023: 1656. <span class="pub-tag">SCI IF=4.996</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Yu, X., Hao, J., Zhou, J., Su, Y., Karim, S., Yu, Y. <span class="pub-title">Modular snapshot multispectral-panchromatic imager (MSPI) with customized filter arrays.</span>
+        <span class="pub-venue">Optics Express</span>, 31(2), 2023: 1475–1485. <span class="pub-tag">SCI IF=3.833</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Li, J., Hao, J., Tong, G., Karim, S. <span class="pub-title">Unsupervised demosaicking network using the recurrent renovation and the pixel-wise guidance.</span>
+        <span class="pub-venue">Optics Letters</span>, 47(16), 2022: 4008–4011. <span class="pub-tag">SCI IF=3.56</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Shakir, M., Karim, S.*, Saeed, M.I., Mustafa, H. <span class="pub-title">IoT-based real time clinical healthcare system for aging and underprivileged areas.</span>
+        <span class="pub-venue">International Journal of Computational Vision and Robotics (IJCVR)</span>, 13(2), 2023. <span class="pub-tag">ESCI</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Shakir, M., Karim, S.*, Memon, S., Rehman, S., Mustafa, H. <span class="pub-title">An improvement in IoT-based smart trash management system using Raspberry Pi.</span>
+        <span class="pub-venue">International Journal of Computational Vision and Robotics (IJCVR)</span>, 2022. <span class="pub-tag">ESCI</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Karim, S.*, Zhang, Y., Yin, S., Bibi, I., Brohi, A.A. <span class="pub-title">A brief review and challenges of object detection in optical remote sensing imagery.</span>
+        <span class="pub-venue">Multiagent and Grid Systems</span>, 16(3), 2020: 227–243. <span class="pub-tag">EI &amp; ESCI</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Karim, S.*, Zhang, Y., Yin, S., et al. <span class="pub-title">Impact of compressed and down-scaled training images on vehicle detection in remote sensing imagery.</span>
+        <span class="pub-venue">Multimedia Tools and Applications</span>, 2019. <span class="pub-tag">SCI IF=2.101</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Karim, S.*, Zhang, Y., Asif, M.R., Ali, S. <span class="pub-title">Comparative analysis of feature extraction methods in satellite imagery.</span>
+        <span class="pub-venue">Journal of Applied Remote Sensing</span>, 11(4), 2017: 042618. <span class="pub-tag">SCI IF=1.107</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Yin, S., Li, H., Liu, D., Karim, S. <span class="pub-title">Active contour modal based on density-oriented BIRCH clustering method for medical image segmentation.</span>
+        <span class="pub-venue">Multimedia Tools and Applications</span>, 2020. <span class="pub-tag">SCI IF=2.313</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Teng, L., Li, H., Karim, S. <span class="pub-title">DMCNN: A Deep Multiscale Convolutional Neural Network Model for Medical Image Segmentation.</span>
+        <span class="pub-venue">Journal of Healthcare Engineering</span>, 2019. <span class="pub-tag">SCI IF=1.295</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Sun, Y., Yin, S., Li, H., Teng, L., Karim, S. <span class="pub-title">GPOGG: Gaussian Pigeon-oriented Graph Clustering Algorithm for Social Networks Cluster.</span>
+        <span class="pub-venue">IEEE Access</span>, 2019. <span class="pub-tag">SCI IF=4.098</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Yin, S., Zhang, Y., Karim, S. <span class="pub-title">Large Scale Remote Sensing Image Segmentation Based on Fuzzy Region Competition and Gaussian Mixture Model.</span>
+        <span class="pub-venue">IEEE Access</span>, 2018. <span class="pub-tag">SCI IF=3.557</span>
+      </div>
+
+      <div class="pub-item" data-type="journal">
+        Laghari, A.A., He, H., Karim, S., Shah, H.A., Karn, N.K. <span class="pub-title">Quality of Experience Assessment of Video Quality in Social Clouds.</span>
+        <span class="pub-venue">Wireless Communications and Mobile Computing</span>, 2017. <span class="pub-tag">SCI IF=1.87</span>
+      </div>
+
+      <!-- ===== CONFERENCE PAPERS ===== -->
+      <div class="pub-item" data-type="conference">
+        Karim, S., Zhang, Y., Yin, S., Asif, M.R. <span class="pub-title">An Efficient Region Proposal Method for Optical Remote Sensing Imagery.</span>
+        <span class="pub-venue">IGARSS-2018 IEEE International Geoscience and Remote Sensing Symposium</span>, 2018: 2455–2458. <span class="pub-tag">EI Conference</span>
+      </div>
+
+      <div class="pub-item" data-type="conference">
+        Karim, S., Zhang, Y., Laghari, A.A., Asif, M.R. <span class="pub-title">Image Processing Based Proposed Drone for Detecting and Controlling Street Crimes.</span>
+        <span class="pub-venue">17th IEEE International Conference on Communication Technology</span>, 2017. <span class="pub-tag">EI Conference</span>
+      </div>
+
+      <div class="pub-item" data-type="conference">
+        Karim, S., Zhang, Y., Ali, S., Asif, M.R. <span class="pub-title">An Improvement of Vehicle Detection under Shadow Regions in Satellite Imagery.</span>
+        <span class="pub-venue">9th International Conference on Graphic and Image Processing (ICGIP)</span>, 2018. <span class="pub-tag">EI Conference</span>
+      </div>
+
+      <div class="pub-item" data-type="conference">
+        Karim, S., Ting, T., Hussain, S., Bakhsh, K. <span class="pub-title">Preparation, Structure and Dielectric/Piezoelectric Properties of BiScO3-PbTiO3-Pb(Mn1/3Nb2/3)O3 high temperature piezoelectric ceramics.</span>
+        <span class="pub-venue">Fourth International Conference on Aerospace Science and Engineering (ICASE)</span>, IEEE, 2015: 99–105. <span class="pub-tag">IEEE</span>
+      </div>
+
+    </div>
+
+    <div class="pub-more">
+      <a href="https://scholar.google.com/citations?user=WcKWid4QAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-primary">View Full List on Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECTS ==================== -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Research Projects</h2>
+    <p class="section-subtitle">Selected academic and funded research projects.</p>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>Object Detection in Optical Remote Sensing Imagery</h4>
+        <p>PhD thesis research on local feature-based object detection for optical remote sensing imagery.</p>
+        <span class="tag">Computer Vision</span><span class="tag">Remote Sensing</span>
+      </div>
+      <div class="project-card">
+        <h4>Multidimensional Imaging Systems</h4>
+        <p>Design and experimentation of multidimensional imaging systems using established scientific protocols.</p>
+        <
