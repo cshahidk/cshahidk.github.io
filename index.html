@@ -94,90 +94,93 @@
   .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--navy); }
 
   /* ============ HERO ============ */
-  .hero {
-    background-color: #0f2740;
-    background-image: linear-gradient(135deg, #0f2740 0%, #1b3a5c 100%);
-    color: #ffffff;
-    padding: 80px 0 72px;
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 40px;
-    align-items: center;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-    color: #ffffff;
-  }
-  .hero .role {
-    font-size: 1.15rem;
-    color: #b8d4ec;
-    margin-bottom: 18px;
-    font-weight: 500;
-    color: #b8d4ec;
-  }
-  .pi-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 4px 12px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-    vertical-align: middle;
-  }
-  .hero .tagline {
-    color: #d6e6f4;
-    max-width: 620px;
-    margin-bottom: 26px;
-    color: #d6e6f4;
-  }
-  .hero-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    font-size: 0.9rem;
-    color: #cfe0ef;
-    margin-bottom: 28px;
-  }
-  .hero-contact span { display: inline-flex; align-items: center; gap: 6px; }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn {
-    display: inline-block;
-    padding: 11px 22px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.92rem;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: 1.5px solid transparent;
-  }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-primary:hover { background: #256aa3; text-decoration: none; }
-  .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
-  .btn-outline:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+.hero {
+  background-color: #0f2740 !important;
+  background-image: linear-gradient(135deg, #0f2740 0%, #1b3a5c 100%) !important;
+  color: #ffffff !important;
+  padding: 80px 0 72px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  color: #ffffff !important;
+}
+.hero .role {
+  font-size: 1.15rem;
+  color: #b8d4ec !important;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.pi-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  vertical-align: middle;
+}
+.hero .tagline {
+  color: #d6e6f4 !important;
+  max-width: 620px;
+  margin-bottom: 26px;
+}
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 0.9rem;
+  color: #cfe0ef !important;
+  margin-bottom: 28px;
+}
+.hero-contact span { display: inline-flex; align-items: center; gap: 6px; }
+.hero-contact a { color: #b8d4ec !important; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.btn-primary { background: var(--accent); color: #ffffff !important; }
+.btn-primary:hover { background: #256aa3; text-decoration: none; }
+.btn-outline {
+  background: transparent;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.7) !important;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.15); text-decoration: none; }
 
-  .avatar {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    border: 3px solid rgba(255,255,255,0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 1px;
-  }
+.avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 3px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  letter-spacing: 1px;
+}
 
   /* ============ ABOUT ============ */
   .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; }
